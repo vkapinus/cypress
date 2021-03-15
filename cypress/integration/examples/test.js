@@ -4,8 +4,7 @@ let searchWord = 'Утюг'
 let searchFrame = '[id^=j-search]'
 let searchButton = 'button[name="sa"]'
 let resultHeader = 'div.b-content > h1'
-let itemName = 'span.result__name'
-let titles = new Array();
+let itemNames = 'span.result__name'
 
 
 describe('SearchTest', () => {
@@ -15,6 +14,6 @@ describe('SearchTest', () => {
         cy.get(searchFrame).type(searchWord)
         cy.get(searchButton).click()
         cy.get(resultHeader).should('be.visible')
-        cy.get(itemName).should('contain', searchWord)
+        cy.get(itemNames).should('contain', searchWord)
     })
 })
